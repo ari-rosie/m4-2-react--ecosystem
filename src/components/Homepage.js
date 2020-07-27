@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 import { items } from '../data.js';
 import Fruit from './Fruit.js';
 import styled from 'styled-components';
@@ -21,7 +23,9 @@ const Homepage = () => {
             <p>Browse items:</p>
             <Catalogue>                
                 {Object.keys(items).map(item => 
-                    <Fruit key={items[item].id} fruit={items[item]} />
+                    <Link key={'link'+ items[item].id} to={'/items/' + items[item].id}> 
+                        <Fruit key={items[item].id} fruit={items[item]} />
+                    </Link>
                 )}
             </Catalogue>
         </Wrapper>

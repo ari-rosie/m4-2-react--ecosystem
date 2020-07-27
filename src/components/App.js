@@ -1,6 +1,5 @@
 import {
   BrowserRouter as Router,
-  Link,
   Route,
   Switch,
 } from 'react-router-dom';
@@ -9,6 +8,7 @@ import React from 'react';
 import { Header } from "./Header.js"; 
 import About from "./About.js";
 import Homepage from "./Homepage.js";
+import ItemDetails from './ItemDetails.js';
 
 
 const App = (props) => {
@@ -22,8 +22,8 @@ const App = (props) => {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/items/:itemsId">
-          {/* <Item /> */}Item
+        <Route path="/items/:itemId">
+          <ItemDetails />
         </Route>
       </Switch>
     </Router>
